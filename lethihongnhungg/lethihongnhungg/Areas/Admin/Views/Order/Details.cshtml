@@ -1,0 +1,50 @@
+﻿@model lethihongnhungg.DB.Order
+
+@{
+    ViewBag.Title = "Order Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center">Order Details</h2>
+    <div class="card shadow-sm rounded mt-4 mb-5">
+        <div class="card-header text-center bg-primary text-white">
+            <h4>Order Information</h4>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-4 font-weight-bold">
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt class="col-sm-4 font-weight-bold">
+                    @Html.DisplayNameFor(model => model.UserId)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.UserId)
+                </dd>
+
+                <dt class="col-sm-4 font-weight-bold">
+                    @Html.DisplayNameFor(model => model.Status)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.Status)
+                </dd>
+
+                <dt class="col-sm-4 font-weight-bold">
+                    @Html.DisplayNameFor(model => model.CreatedOnUtc)
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.CreatedOnUtc)
+                </dd>
+            </dl>
+        </div>
+        <div class="card-footer text-center">
+            <a href="@Url.Action("Edit", new { id = Model.Id })" class="btn btn-warning">Edit</a>
+            <a href="@Url.Action("Index")" class="btn btn-secondary ml-3">Back to List</a>
+        </div>
+    </div>
+</div>
